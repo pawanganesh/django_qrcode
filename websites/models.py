@@ -8,17 +8,17 @@ from PIL import Image
 
 
 class Website(models.Model):
-    name = models.CharField(max_length=200)
+    url = models.CharField(max_length=200)
     qr_code = models.ImageField(upload_to='qr_codes', blank=True)
 
     def __str__(self):
-        return str(self.name)
+        return str(self.url)
 
     def save(self, *args, **kwargs):
-        qrcode_img = qrcode.make(self.name)
+        qrcode_img = qrcode.make(self.url)
         canvas = Image.new('RGB', (370, 370), 'white')
         canvas.paste(qrcode_img)
-        fname = f'qr_code-{self.name}.png'
+        fname = f'qr_code-{self.url}.png'
         buffer = BytesIO()
         canvas.save(buffer, 'PNG')
         self.qr_code.save(fname, File(buffer), save=False)
