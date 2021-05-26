@@ -16,6 +16,6 @@ Every time new qr_code is generated and also stores previously generated file in
 <br>
 #  want I want
 1. While updating object without changing url field, new qr_code should not be generated.<br>
-2. While updating object changing url field, new qr_code should be genrated and previously generate file should be deleted.
+2. While updating object changing url field, new qr_code should be generated and previously generate file should be deleted.
 
 #  how can I achieve this
