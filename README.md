@@ -19,3 +19,6 @@ Every time new qr_code is generated and also stores previously generated file in
 2. While updating object changing url field, new qr_code should be generated and previously generate file should be deleted.
 
 #  how can I achieve this
+
+
+# Solved
